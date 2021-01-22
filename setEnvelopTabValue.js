@@ -8,7 +8,8 @@ function makeEnvelope(args) {
     let signer1 = docusign.TemplateRole.constructFromObject({
         email: args.signerEmail,
         name: args.signerName,
-        roleName: 'signer'});
+        roleName: 'signer'
+    });
 
 
     // Create signHere field (also known as tabs) on the document,
@@ -66,7 +67,7 @@ function makeEnvelope(args) {
         textCustomFields: [salaryCustomField]
     });
 
-// Create a cc template role.
+    // Create a cc template role.
     // We're setting the parameters via setters
     let cc1 = new docusign.TemplateRole();
     cc1.email = args.ccEmail;
@@ -100,7 +101,7 @@ async function sendEnvelop(args) {
 
 sendEnvelop({
     accountId: "aecbc359-1111-4e81-9823-1a3d08d9a221",
-    accessToken: "xxxxxxxxxxx",
+    accessToken: "XXXXX",
     basePath: "https://demo.docusign.net/restapi/",
     envelopeArgs: {
         templateId: "00d2d6cf-37bf-4253-af37-5898a7ce6ab0",
